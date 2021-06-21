@@ -2,3 +2,4 @@ flask
 tweepy
 gunicorn
 python-multipart
+python-dotenv
