@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>SNS Service</title>
+        <meta name="description" content="ディスクリプションを入力">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/static/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="title-text">
+                SNS Service
+            <div>
+        </header>
+        <div class="post-form">
+            <h1>投稿</h1>
+            <section>
+                <h2>フォーム</h2>
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <textarea class="text-form" name="post_text" type="text" placeholder="投稿テキスト">{{ post_text }}</textarea>
+                    <input class="file-form" id="post_img1" name="post_img1" type="file" />
+                    <input class="file-form" id="post_img2" name="post_img2" type="file" />
+                    <input class="file-form" id="post_img3" name="post_img3" type="file" />
+                    <input class="file-form" id="post_img4" name="post_img4" type="file" />
+                    <button type="submit">送信</button>
+                </form>
+            </section>
+        </div>
+        <footer>
+            <div class="title-text">
+                SNS Service
+            <div>
+        </footer>
+    </body>
+</html>

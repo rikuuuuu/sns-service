@@ -1,0 +1,14 @@
+steps:
+- name: "gcr.io/cloud-builders/gcloud"
+  args:
+    - kms
+    - decrypt
+    - "--location=asia-northeast1"
+    - "--keyring=config"
+    - "--key=snskey"
+    - "--plaintext-file=.env"
+    - "--ciphertext-file=.env.enc"
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'
+  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
+timeout: '1600s'
