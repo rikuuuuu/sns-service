@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-runtime: custom
-env: flex
+runtime: python39
+env: standard
 entrypoint: gunicorn -b :$PORT main:app
 
 runtime_config:
@@ -35,8 +35,3 @@ resources:
   cpu: .2
   memory_gb: .15
   disk_size_gb: 10
-
-handlers:
-  - url: /.*
-    script: auto
-    secure: always
