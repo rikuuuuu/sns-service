@@ -3,3 +3,5 @@ tweepy
 gunicorn
 python-multipart
 python-dotenv
+google-api-python-client
+flask-cors

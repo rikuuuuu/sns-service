@@ -1,13 +1,15 @@
 import os
 from flask import Flask, render_template, request
-from app import twitter
+from flask_cors import CORS
+from app import twitter, youtube
 
 app = Flask(__name__)
 
+CORS(app)
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+# @app.route('/')
+# def index():
+#     return render_template('index.html')
 
 
 @app.route('/', methods=['POST'])
@@ -42,6 +44,11 @@ def tweet():
         os.remove(image)
     return render_template('index.html', post_text=post_text)
 
+@app.route('/youtube-search/', methods=['GET'])
+def search():
+    query = request.args['q']
+    videoIds = youtube.search_query(query=query)
+    return {"videoIds": videoIds}
 
 if __name__ == '__main__':
     app.run(debug=True)

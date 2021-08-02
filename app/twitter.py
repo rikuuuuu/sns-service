@@ -1,7 +1,6 @@
 #tweetを投稿
 import tweepy
 import os
-from os import getenv
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -11,8 +10,6 @@ consumer_secret = os.getenv('TW_CONSUMER_SEC_KEY')
 access_token = os.getenv('TW_ACCESS_TOKEN')
 access_token_secret = os.getenv('TW_ACCESS_SC_TOKEN')
 me_accout_id = os.getenv('ME_ACCOUT_ID')
-print("customer_key", consumer_key)
-print(os.getenv('TW_CONSUMER_KEY'))
 
 # Twitterオブジェクトの生成
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
